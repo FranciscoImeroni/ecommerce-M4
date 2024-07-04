@@ -1,0 +1,101 @@
+
+    [
+        {
+            "name": "Iphone 15",
+            "description": "The best smartphone",
+            "price": 199.99,
+            "stock": 12,
+            "category": "smartphone",
+            "imgUrl": "https://i.pinimg.com/736x/84/c5/ff/84c5ff4002c4c4bd4f780320cec7db8c.jpg"
+        },
+        {
+            "name": "MacBook Pro 2023",
+            "description": "High-performance laptop for professionals",
+            "price": 2399.99,
+            "stock": 8,
+            "category": "laptop",
+            "imgUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-spacegray-select-202206_GEO_ES?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1653493200207"
+        },
+        {
+            "name": "Samsung Galaxy S23",
+            "description": "Cutting-edge smartphone with superior camera",
+            "price": 999.99,
+            "stock": 15,
+            "category": "smartphone",
+            "imgUrl": "https://images.samsung.com/is/image/samsung/p6pim/ar/feature/smartphone-galaxy-s23-ultra-black-back-sm-s918bzkaear-535981898"
+        },
+        {
+            "name": "Sony WH-1000XM5",
+            "description": "Noise-canceling wireless headphones",
+            "price": 349.99,
+            "stock": 25,
+            "category": "headphones",
+            "imgUrl": "https://store.sony.com.co/ccstore/v1/images/?source=/file/v8794209830822468777/products/Sony_White_WH-1000XM5.jpg"
+        },
+        {
+            "name": "Dell XPS 13",
+            "description": "Compact and powerful ultrabook",
+            "price": 1299.99,
+            "stock": 10,
+            "category": "laptop",
+            "imgUrl": "https://i.dell.com/sites/imagecontent/products/PublishingImages/xps-13-9310-laptop/cn50180002-xps-13-9310-slvr-bk-coral-nbk-hw-5000x5000.jpg"
+        },
+        {
+            "name": "Apple Watch Series 8",
+            "description": "Advanced smartwatch with health tracking",
+            "price": 399.99,
+            "stock": 18,
+            "category": "smartwatch",
+            "imgUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MKUJ3_VW_34FR+watch-40-alum-gold-nc-8s_VW_34FR_WF_CO_GEO_ES?wid=2048&hei=2048&fmt=jpeg&qlt=95&.v=1598589242000,1607036932000"
+        },
+        {
+            "name": "Google Pixel 7",
+            "description": "Pure Android experience with excellent camera",
+            "price": 899.99,
+            "stock": 20,
+            "category": "smartphone",
+            "imgUrl": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Google_Pixel_7_Pro_G9_Wide_Front_with_Pixel_7_Pro_G9_Wide_Back_with_Pixel_Watch_Family_of_G9_Wide.png"
+        },
+        {
+            "name": "Microsoft Surface Pro 9",
+            "description": "Versatile 2-in-1 tablet and laptop",
+            "price": 999.99,
+            "stock": 12,
+            "category": "tablet",
+            "imgUrl": "https://c.s-microsoft.com/en-us/CMSImages/Surface-Pro-9-Platinum-01.jpg?version=2d6f9392-d812-b65d-8c1a-8232b61863f4"
+        },
+        {
+            "name": "Razer Blade 15",
+            "description": "High-end gaming laptop",
+            "price": 2499.99,
+            "stock": 5,
+            "category": "laptop",
+            "imgUrl": "https://assets3.razerzone.com/JOhpIvsCy7JBIITomDX7IhvsKs0=/1500x1500/filters:quality(80)/razer-media/catalog/product/2395/laptop_razer_blade_15_base_2022/01_laptop_razer_blade_15_base_2022.png"
+        },
+        {
+            "name": "Canon EOS R6",
+            "description": "Full-frame mirrorless camera",
+            "price": 2499.99,
+            "stock": 7,
+            "category": "camera",
+            "imgUrl": "https://store.canon.com.au/media/catalog/product/cache/27047c3c658fc06ed1c4f71c23e6e042/e/o/eos_r6_body_front_top_1_1_1_1_1.jpg"
+        },
+        {
+            "name": "Apple AirPods Pro",
+            "description": "Wireless earbuds with active noise cancellation",
+            "price": 249.99,
+            "stock": 30,
+            "category": "earbuds",
+            "imgUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-pro-2022?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1662128971175"
+        },
+        {
+            "name": "LG OLED55CXPUA",
+            "description": "55-inch 4K OLED Smart TV",
+            "price": 1499.99,
+            "stock": 10,
+            "category": "television",
+            "imgUrl": "https://images.lg.com/us/tvs/gallery/OLED55CXPUA/lg-oled55cxpua-gallery-1.jpg"
+        }
+    ]
+ 
+ 
