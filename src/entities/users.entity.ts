@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Orders } from "./orders.entity";
+import { Role } from "src/modules/users/roles.enum";
 
 @Entity('users')
 export class Users {
@@ -62,11 +63,12 @@ export class Users {
     })
     country: string;
 
-    @Column({
-        type: 'boolean',
-        default: false,
+    @Column({ 
+        type: 'enum',
+        enum: Role, 
+        default: Role.User
     })
-    isAdmin: boolean;
+    role: Role;
 
     @OneToMany(() => Orders, (order) => order.user)
     @JoinColumn({ name: 'order_id' })

@@ -7,16 +7,17 @@ dotenvConfig({path: '.development.env'});
 
 const config = {
     type: 'postgres',
-    databse: process.env.DB_NAME,
-    host: process.env.DB_HOST, //'host.docker.internal'
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST, //para local
+    //host: 'postgresdb', //para crear la img de docker y  usarla contenerizada
     port: process.env.DB_PORT as unknown as number,
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     entities: ['dist/**/*.entity{.ts,.js}'],
     migrations: ['dist/migrations/*{.ts,.js}'],
     autoLoadEntities: true, //carga entidades automaticamente
-    loggin:false,
-    //synchronize:true, //dev stage
+    logging:false,
+    synchronize:true, //dev stage
     dropSchema:true,  //dev stage
 };
 

@@ -10,9 +10,7 @@ export class CreateOrderDto {
   userId: string;
 
   /**
-   * @example {
-	"userId":"d0e5c864-1279-4288-9a32-03589f1d378c",
-	
+   * @example 
 	"products": [
 		{
 			"id": "7a30d3fe-68b4-4fb5-a916-5a6105771bfc"
@@ -21,7 +19,6 @@ export class CreateOrderDto {
 			"id":"bac533fa-dd50-4e19-a924-b1fb801f8eab"
 		}
 	]
-}
    */
   @IsArray()
   @ArrayMinSize(1)

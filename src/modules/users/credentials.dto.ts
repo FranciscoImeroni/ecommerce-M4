@@ -1,6 +1,7 @@
-import { IsBoolean, IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, Matches, MaxLength, MinLength, Validate } from "class-validator";
+import { IsBoolean, IsEmail, IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString, Matches, MaxLength, MinLength, Validate } from "class-validator";
 import { ApiHideProperty, ApiProperty, PartialType } from '@nestjs/swagger';
 import { MatchPassword } from "src/decorators/matchPassword.decorators";
+import { Role } from "./roles.enum";
 
 export class CreateUserDto {
     @ApiHideProperty()
@@ -87,15 +88,16 @@ export class CreateUserDto {
     city: string;
 
     @ApiProperty({
-        description: 'Indica si el usuario es administrador',
-        example: false
-    })
-    @IsOptional()
-    @IsBoolean()
-    isAdmin?: boolean;
-}
+        description: 'Rol del usuario',
+        example: Role.User,
+        enum: Role
+      })
+      @IsOptional()
+      @IsEnum(Role)
+      role: Role;
+    }
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @ApiHideProperty()
-  confirmPassword?: string; // Asegúrate de que confirmPassword no esté incluido 
+  confirmPassword?: string; 
 }

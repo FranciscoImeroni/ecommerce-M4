@@ -6,46 +6,42 @@ import { Users } from "src/entities/users.entity";
 
 @Injectable()
 export class AuthService {
-    constructor(private readonly usersRepository: UsersRepository,
-        private readonly jwtService: JwtService,
-        ) {}
+  constructor(
+    private readonly usersRepository: UsersRepository,
+    private readonly jwtService: JwtService,
+  ) {}
 
-    async getAuth() {
-        return "get auth";
-    }
+  async signIn(email: string, password: string) {
+    const user = await this.usersRepository.getUserByEmail(email);
+    if (!user) throw new BadRequestException('Invalid credentials');
 
-    async signIn(email:string, password:string){
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) throw new BadRequestException('Invalid credentials');
 
-        const user = await this.usersRepository.getUserByEmail(email);
-        if(!user) throw new BadRequestException('Invalid credentials')
+    // Firmar token y generarlo
+    const payload = { id: user.id, email: user.email, role: user.role };
+    const token = this.jwtService.sign(payload);
 
-        const validPassword = await bcrypt.compare(password, user.password);
-        if(!validPassword) throw new BadRequestException('Invalid credentials');
+    return { 
+      message: 'User logged in',
+      token,
+    };
+  }
 
-        // Firmar token y generarlo
-        const payload = {id: user.id, email:user.email, isAdmin: user.isAdmin};
-        const token = this.jwtService.sign(payload);
+  async signUp(user: Partial<Users>) {
+    const { email, password } = user;
 
-        return { 
-            message: 'User logged in',
-            token,  
-        };
-    }
+    const foundUser = await this.usersRepository.getUserByEmail(email);
 
-    async signUp(user:Partial<Users>){
-        const {email,password} = user
+    if (foundUser) throw new BadRequestException('Registered Email');
 
-        const foundUser = await this.usersRepository.getUserByEmail(email)
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-        if(foundUser) throw new BadRequestException('Registered Email')
+    const newUser = await this.usersRepository.createUser({ ...user, password: hashedPassword });
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        const newUser = await this.usersRepository.createUser({ ...user, password: hashedPassword });
-
-        return { 
-            message: 'User successfully registered', 
-            user: newUser 
-        };
-    }
+    return { 
+      message: 'User successfully registered', 
+      user: newUser,
+    };
+  }
 }

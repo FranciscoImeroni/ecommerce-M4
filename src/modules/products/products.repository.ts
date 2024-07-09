@@ -2,7 +2,7 @@ import { Injectable, OnModuleInit } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Categories } from "src/entities/categories.entity";
 import { Products } from "src/entities/products.entity";
-import { Repository } from "typeorm";
+import { Connection, Repository } from "typeorm";
 import * as data from '../../utils/data.json';
 import { ProductDto } from "./products.dto";
 import { CategoriesService } from "../categories/categories.service";
@@ -64,6 +64,11 @@ export class ProductsRepository implements OnModuleInit{
     const category = await this.categoriesRepository.findOne({ where: { id: productDto.category } });
     if (!category) {
       throw new Error(`Category with id ${productDto.category} not found`);
+    }
+
+    const existingProduct = await this.productsRepository.findOne({ where: { name: productDto.name } });
+    if (existingProduct) {
+      throw new Error(`Product with name ${productDto.name} already exists`);
     }
 
     const newProduct = this.productsRepository.create({
